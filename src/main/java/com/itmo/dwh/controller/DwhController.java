@@ -21,7 +21,7 @@ import java.util.List;
 @RestController
 public class DwhController {
     //получение информации о предоставленных услугах и возврат переданных id
-    @PostMapping(path = "/booking", produces = "application/json")
+    @PostMapping(produces = "application/json")
     public ResponseEntity<?> GetLastDayServices(@Valid @RequestBody List<BookingStatRequestDTO> bookings){
         if(bookings.isEmpty())
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
