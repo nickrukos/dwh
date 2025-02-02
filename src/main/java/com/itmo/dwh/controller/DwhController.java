@@ -22,7 +22,7 @@ import java.util.List;
 public class DwhController {
     //получение информации о предоставленных услугах и возврат переданных id
     @PostMapping(produces = "application/json")
-    public ResponseEntity<?> GetLastDayServices(@Valid @RequestBody List<BookingStatRequestDTO> bookings){
+    public ResponseEntity<List<Long>> GetLastDayServices(@Valid @RequestBody List<BookingStatRequestDTO> bookings){
         if(bookings.isEmpty())
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         List<Long> listId = bookings.stream().map(x->x.id()).toList();
